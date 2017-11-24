@@ -13,13 +13,15 @@ int main()
     sf::RenderWindow window(sf::VideoMode({WINDOW_WIDTH, WINDOW_HEIGHT}), "Moving Ball");
     sf::Clock clock;
 
-    sf::Vector2f position = {10, 350};
-
     sf::CircleShape ball(BALL_SIZE);
     ball.setFillColor(sf::Color(0xFF, 0xFF, 0xFF));
 
+    float x = 0;
+    float y = 350;
     float time = 0;
     float speedX = 100.f;
+
+    const sf::Vector2f position = {x, y};
 
     while (window.isOpen())
     {
@@ -38,16 +40,16 @@ int main()
         float dt = clock.restart().asSeconds();
         time = dt + time;
         float wavePhase = time * float(2 * M_PI);
-        float x = x + speedX * dt;
-        const float y = amplitudeY * std::sin(wavePhase / periodY);
+        x += speedX * dt;
+        float y = amplitudeY * std::sin(wavePhase / periodY);
         const sf::Vector2f offset = {x, y};
 
-        if (offset.x + 2 * BALL_SIZE >= WINDOW_WIDTH - 6)
+        if (x + 2 * BALL_SIZE >= WINDOW_WIDTH - 6)
         {
             speedX = -speedX;
         }
 
-        if (offset.x + 10 <= 0)
+        if (x + 10 <= 0)
         {
             speedX = -speedX;
         }
