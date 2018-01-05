@@ -1,4 +1,4 @@
-add_executable(sfml3.1 main.cpp)
+add_executable(sfml3main.cpp)
 
 target_include_directories(sfml3.1 PRIVATE ${SFML_INCLUDE_DIR})
 target_compile_features(sfml3.1 PUBLIC cxx_std_17)
