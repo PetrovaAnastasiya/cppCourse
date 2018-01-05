@@ -8,3 +8,4 @@ project(sfml-lab-2)
 
 add_subdirectory(sfml2.1)
 add_subdirectory(sfml2.2)
+add_subdirectory(sfml3.1)
