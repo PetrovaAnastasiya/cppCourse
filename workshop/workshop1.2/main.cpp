@@ -87,14 +87,14 @@ void update(const sf::Vector2f& mousePosition, sf::Clock& clock, sf::ConvexShape
         realAngleDegrees = anglePointerDegrees + std::min(turnSpeed, std::abs(deltaAngleDegrees));
     }
     //Установка поворота указателя
-    pointer.setRotation(realAngleDegrees);
     //Обновление позиции указателя
     float distancePointerMouse = std::hypot(mousePositionDelta.x, mousePositionDelta.y);
     sf::Vector2f direction = {mousePositionDelta.x / distancePointerMouse, mousePositionDelta.y / distancePointerMouse};
     float speedMotionMax = 90.0;
     float speedMotion= speedMotionMax * deltaTime;
     if (distancePointerMouse != 0)
-    {
+    { 
+        pointer.setRotation(realAngleDegrees);
         pointer.setPosition(pointer.getPosition() + direction * speedMotion);
     }
 }
