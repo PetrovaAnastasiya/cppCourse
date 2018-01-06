@@ -51,7 +51,6 @@ void pollEvent(sf::RenderWindow& window, sf::Vector2f& mousePosition)
             break;
         default:
             break;
-                
         }
     }
 }
@@ -106,7 +105,6 @@ void redrawFrame(sf::RenderWindow& window, sf::ConvexShape& pointer)
 
 int main()
 { 
-
     constexpr unsigned WINDOW_WIDTH = 800;
     constexpr unsigned WINDOW_HEIGHT = 600;
     //Инициализация окна
