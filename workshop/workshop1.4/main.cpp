@@ -26,25 +26,29 @@ void init(sf::Texture &texture,sf::Texture &textureRedPoint, sf::Sprite &cat, sf
 void update(const sf::Vector2f& mousePosition, sf::Clock& clock, sf::Sprite &cat, sf::Sprite &redPoint)
 {
   redPoint.setPosition(mousePosition);
+  
   const sf::Vector2f mousePositionDelta = mousePosition - cat.getPosition();
   float deltaTime = clock.restart().asSeconds();
-  float distancePointerMouse = std::hypot(mousePositionDelta.x, mousePositionDelta.y);
-  sf::Vector2f direction = {mousePositionDelta.x / distancePointerMouse, mousePositionDelta.y / distancePointerMouse};
+  float distancePointCat = std::hypot(mousePositionDelta.x, mousePositionDelta.y);
+  sf::Vector2f direction = {mousePositionDelta.x / distancePointCat, mousePositionDelta.y / distancePointCat};
   float speedMotionMax = 90.0;
   float speedMotion= speedMotionMax * deltaTime;
-  if (distancePointerMouse != 0)
+  std::cout << "distancePointCat=" << distancePointCat << std::endl;
+  if (distancePointCat > 0.5)
   {
       cat.setPosition(cat.getPosition() + direction * speedMotion);      
-  }
-  if (mousePosition.x < cat.getPosition().x)
-  {
-    cat.setScale(-1,1);
-  }
-  if (mousePosition.x > cat.getPosition().x)
-  {
-    cat.setScale(1,1);
-  }
-  
+      if (redPoint.getPosition().x != cat.getPosition().x)
+      {
+        if (redPoint.getPosition().x < cat.getPosition().x)
+        {
+            cat.setScale(-1,1);
+        }
+        if (redPoint.getPosition().x > cat.getPosition().x)
+        {
+            cat.setScale(1,1);
+        }
+      }
+  }    
 }
 //Обработка событий (закрытие окна, нажатие мыши)
 void pollEvent(sf::RenderWindow& window, sf::Vector2f& mousePosition)
