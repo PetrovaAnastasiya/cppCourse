@@ -53,7 +53,6 @@ void pollEvent(sf::RenderWindow& window, sf::Vector2f& mousePosition)
             window.close();
             break;
         case sf::Event::MouseButtonReleased:
-            //onMouseReleased(event.MouseButtonEvent, mousePosition);
             mousePosition = {float(event.mouseButton.x), float(event.mouseButton.y)};
             break;
         default:
