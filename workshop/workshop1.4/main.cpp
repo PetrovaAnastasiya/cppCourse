@@ -36,6 +36,15 @@ void update(const sf::Vector2f& mousePosition, sf::Clock& clock, sf::Sprite &cat
   {
       cat.setPosition(cat.getPosition() + direction * speedMotion);      
   }
+  if (mousePosition.x < cat.getPosition().x)
+  {
+    cat.setScale(-1,1);
+  }
+  if (mousePosition.x > cat.getPosition().x)
+  {
+    cat.setScale(1,1);
+  }
+  
 }
 //Обработка событий (закрытие окна, нажатие мыши)
 void pollEvent(sf::RenderWindow& window, sf::Vector2f& mousePosition)
