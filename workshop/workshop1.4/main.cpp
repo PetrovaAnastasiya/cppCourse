@@ -13,7 +13,6 @@ void init(sf::Texture &texture,sf::Texture &textureRedPoint, sf::Sprite &cat, sf
 
     textureRedPoint.loadFromFile("red.png", sf::IntRect(0, 0, 32, 32));
     redPoint.setTexture(textureRedPoint);
-    redPoint.setPosition(50,100);
     redPoint.setOrigin(16, 16);
 }
 
@@ -86,7 +85,7 @@ int main()
     sf::Texture textureRedPoint;
     sf::Sprite redPoint;
     //Объявление позиции мыши
-    sf::Vector2f mousePosition;
+    sf::Vector2f mousePosition = {350, 250};    
     //Инициализация кота и точки(вызов функции)
     init(texture,textureRedPoint, cat,redPoint);
     //Основной цикл
