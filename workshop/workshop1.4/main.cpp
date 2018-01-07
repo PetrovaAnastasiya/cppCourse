@@ -16,12 +16,6 @@ void init(sf::Texture &texture,sf::Texture &textureRedPoint, sf::Sprite &cat, sf
     redPoint.setOrigin(16, 16);
 }
 
-/*void onMouseReleased(const sf::Event::MouseButtonEvent& event, sf::Vector2f& mousePosition)
-{
-    std::cout << "mouse x=" << event.x << ", y=" << event.y << std::endl;
-    //Обновление позиции мыши
-    mousePosition = {float(event.x), float(event.y)};
-}*/
 //Движение кота к огоньку
 void update(const sf::Vector2f& mousePosition, sf::Clock& clock, sf::Sprite &cat, sf::Sprite &redPoint)
 {
