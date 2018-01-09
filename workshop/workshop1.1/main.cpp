@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-#include <cmath>
 
 void init (sf::ConvexShape &arrow)
 {
