@@ -23,8 +23,8 @@ void init(Circle (&circles)[BALL_NUM])
         circles[i].ball.setRadius(BALL_SIZE);
         circles[i].ball.setOrigin(BALL_SIZE, BALL_SIZE);
     }
-
-    circles[0].ball.setPosition(30, 30);
+    
+    circles[0].ball.setPosition(70, 500);
     circles[1].ball.setPosition(700, 200);
     circles[2].ball.setPosition(230, 100);
     circles[3].ball.setPosition(390,480);
