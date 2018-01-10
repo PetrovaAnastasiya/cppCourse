@@ -42,6 +42,7 @@ void init(Circle (&circles)[BALL_NUM])
     circles[3].speed = {50.f, 50.f};
     circles[4].speed = {65.f, 300.f};
 }
+
 void update(Circle (&circles)[BALL_NUM], sf::Clock& clock) 
 {
     float deltaTime = clock.restart().asSeconds();
@@ -66,6 +67,7 @@ void update(Circle (&circles)[BALL_NUM], sf::Clock& clock)
         circles[i].ball.setPosition(circles[i].ball.getPosition() + circles[i].speed * deltaTime);
     } 
 }
+
 void pollEvent(sf::RenderWindow &window)
 {
     sf::Event event;
