@@ -62,14 +62,12 @@ void init(Circle (&circles)[BALL_NUM], PRNG& generator)
     circles[3].ball.setFillColor(sf::Color(0, 255, 127));
     circles[4].ball.setFillColor(sf::Color(220, 20, 60));
 
-    float speedX = random(generator, 0.f, 700.f);
-    float speedY = random(generator, 0.f, 700.f);
-
-    circles[0].speed = {speedX,speedY};
-    circles[1].speed = {speedX,speedY};
-    circles[2].speed = {speedX,speedY};
-    circles[3].speed = {speedX,speedY};
-    circles[4].speed = {speedX,speedY};
+    for(size_t i = 0; i < std::size(circles); ++i)
+    {
+        float speedX = random(generator, 0.f, 700.f);
+        float speedY = random(generator, 0.f, 700.f);
+        circles[i].speed = {speedX,speedY};
+    }
 }
 
 void checkImpact(Circle (&circles)[BALL_NUM])
